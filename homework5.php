@@ -15,8 +15,12 @@
     2*3=6
     5*5=25
     6*5=30*/
+    $a = $_POST['num1'];
+    $b = $_POST['num2'];
+    $c = $a * $b;
+    echo "$a * $b = $c";
+    file_get_contents('clickk.txt', "$a * $b = $c" . "\n", FILE_APPEND);
 
-    
 
 
 
