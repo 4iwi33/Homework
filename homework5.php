@@ -19,7 +19,7 @@
     $b = $_POST['num2'];
     $c = $a * $b;
     echo "$a * $b = $c";
-    file_get_contents('clack.txt', "$a * $b = $c" . "\n", FILE_APPEND);
+    file_get_contents('new.txt', "$a * $b = $c" . "\n", FILE_APPEND);
 
 
 
