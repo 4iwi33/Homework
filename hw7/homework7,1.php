@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>homework7</title>
+    <title>homework7,1</title>
     <style>
-        .list {
+        .main {
             background-color: #E6E4E4;
             width: 250px;
             height: 360px;
@@ -15,43 +15,43 @@
             margin: auto;
             font-family: Georgia, 'Times New Roman', Times, serif;
         }
-        .listdown {
+        /* .listdown {
             background-color: #fff;
             font-size: 15px;
             padding: 15px;
-        }
+        } */
 
-        .list p {
+        /* .list p {
             text-align: justify;
             font-size: 22px;
-        }
+        } */
 
-        div {
+        /* div {
             border-radius: 1em;
             box-shadow: 0 0 5px;
             padding: 5px;
-        }
+        } */
 
         input {
             border-radius: 1em;
             background-color: #2C96E3;
         }
-
+/* 
         #noname {
             width: 100px;
             height: 30px;
             color: white;
             margin: 10px 5px;
-        }
+        } */
     </style>
 </head>
 
 <body>
-
+<!-- 
     <form action="homework7.php" method="get" target="_blank">
         <div class="list">
-            <!-- <input type="Hidden" name=id value=1> -->
-            <p>What subjects would you <br>
+             <input type="Hidden" name=id value=1> -->
+            <!-- <p>What subjects would you <br>
                 like to learn more about ?</p>
             <div class="listdown">
                 <input type="Radio" name=vote value=1 checked>HTML & CSS
@@ -68,7 +68,26 @@
             </div>
             <input type="Submit" value="VOTE" id="noname">
         </div>
-    </form>
+    </form> --> 
+
+    <div class="main">
+        <form action="homework7.php" method="post">
+            <?php
+            $arr = file("homework7.txt");
+            ?>
+
+            <h1><? $arr[0] ?></h1>
+            <div class="input">
+                <? 
+                for ($i = 1; $i < count($arr); $i++) {
+                    $buf = explode(" - ", $arr[$i])[0];
+                    echo "<div class=\"radio\"><lable><input type='radio' name='vot' value='$i'>$buf</lable><br>\n</div>";
+                }
+                ?>
+            </div>
+                <input class="submit" type="submit" value="vote">
+        </form>
+    </div>
 </body>
 
 </html>

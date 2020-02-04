@@ -7,20 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>homework7</title>
     <style>
-        .list {
+         .conteiner {
             background-color: #E6E4E4;
             width: 250px;
             height: 170px;
             padding: 15px;
             margin: auto;
         }
-
+/* 
         .listdown {
             background-color: #fff;
             height: 200px
-            font-size: 15px;
-            padding: 15px;
-        }
+            /* font-size: 15px; */
+        /* padding: 15px; */
+        } */
 
         .list p {
             text-align: justify;
@@ -33,15 +33,15 @@
             padding: 5px;
         }
 
-        input {
+        /* input {
             border-radius: 1em;
             background-color: #2C96E3;
-        }
-    </style>
+        } */
+    </style> */
 </head>
 
 <body>
-    <form action="" method="get" target="_blank">
+    <!-- <form action="" method="get" target="_blank">
         <div class="list">
             <p>What is your qeustion ?</p>
             <div class="listdown">
@@ -52,7 +52,63 @@
 
             </div>
         </div>
-    </form>
+    </form> -->
+
+    <?php
+    $ind = $_POST['vot'];
+    $arr = file("homework7.txt");
+    $buf = explode(" - ", $arr[$ind]);
+    $buf[1] += 1;
+    $arr[$ind] = implode(" - ", $buf) . "\n";
+    file_put_contents("homework7.txt", $arr);
+    ?>
+
+    <? //search summ
+    $sum = 0;
+    for ($i = 1; $i < count($arr); $i++) {
+        $sum = $sum + explode(" - ", $arr[$i])[1];
+    }
+    ?>
+
+    <div class="conteiner">
+        <div class="main">
+            <h1><?= $arr[0] ?></h1>
+            <div class="answers">
+
+                <?
+                for ($i = 1; $i < count($arr); $i++) {
+                    $buf = explode(" - ", $arr[$i]);
+                    $result = round(($buf[1] / $sum * 100), 2);
+                    echo "<div class='line' style='width: {$result}px'></div><br> $buf[0] -$result %<br>";
+                }
+                ?>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
