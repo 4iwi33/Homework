@@ -1,6 +1,22 @@
+<pre>
 <?php
 
-print_r($_FILES)
+// print_r($_FILES)
 
 ?>
-<p>File was to send</p>
+</pre>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>php</title>
+</head>
+
+<body>
+    <p>File was send!</p>
+
+</body>
+
+</html>
