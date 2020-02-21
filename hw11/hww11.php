@@ -15,6 +15,6 @@ for ($i = 2; $i < count($arr); $i++) {
             $icon = 'sm.png';
             break;
     }
-    echo "<a href='file\\$arr[$i]'><img src='$icon' width='16' height='16'>$arr[$i]</a><br>";
+     echo "<br><img src='images/$icon' width='30' height='30'><a href='file\\$arr'>$arr</a><br>";
+    // echo "<a href='file\\$arr[$i]'><img src=img/'$icon' width='16' height='16'>$arr[$i]</a><br>";
 }
-?>
