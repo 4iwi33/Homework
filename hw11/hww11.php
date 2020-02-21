@@ -6,13 +6,13 @@ $arr = scandir("file");
 for ($i = 2; $i < count($arr); $i++) {
     switch (explode(".", $arr[$i])[1]) {
         case 'docx':
-            $icon = 'docx.png';
+            $icon = 'docx.jpg';
             break;
         case 'pdf':
-            $icon = 'pdf.png';
+            $icon = 'pdf.jpg';
             break;
         default:
-            $icon = 'sm.png';
+            $icon = 'sm.jpg';
             break;
     }
      echo "<br><img src='images/$icon' width='30' height='30'><a href='file\\$arr'>$arr</a><br>";
