@@ -10,9 +10,9 @@
 <body>
     <!-- Разработать скрипт файлообменника. -->
     <form action="hww11.php" enctype="multipart/form-data" method="POST">
-        <input name="FILE" type="hidden">
-        <input name="" type="file"><br>
-        <input name="" type="submit">
+        <input name="MAX_FILE_SIZE" type="hidden" value="300000">
+        <input name="userfile" type="file"><br>
+        <input type="submit" value="SEND">
     </form>
 </body>
 

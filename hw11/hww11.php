@@ -1,22 +1,20 @@
-<pre>
 <?php
-
-// print_r($_FILES)
-
-?>
-</pre>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>php</title>
-</head>
-
-<body>
-    <p>File was send!</p>
-
-</body>
-
-</html>
+if (is_uploaded_file($_FILES['userfile']['tmp_name'])) {
+    copy($_FILES['userfile']['tmp_name'], "file\\" . $_FILES['userfile']['name']);
+}
+$arr = scandir("file");
+for ($i = 2; $i < count($arr); $i++) {
+    switch (explode(".", $arr[$i])[1]) {
+        case 'docx':
+            $icon = 'docx.jpg';
+            break;
+        case 'pdf':
+            $icon = 'pdf.jpg';
+            break;
+        default:
+            $icon = 'sm.jpg';
+            break;
+    }
+     echo "<br><img src='images/$icon' width='30' height='30'><a href='file\\$arr'>$arr</a><br>";
+    // echo "<a href='file\\$arr[$i]'><img src=img/'$icon' width='16' height='16'>$arr[$i]</a><br>";
+}
